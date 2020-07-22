@@ -17,5 +17,6 @@ services:
     tty: true
     networks:
       - timetracker
+    command: "npm run start"
 networks:
   timetracker: null

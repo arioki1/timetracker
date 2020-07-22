@@ -19,7 +19,7 @@
     "start": "npm-run-all --parallel webpack:watch electron:serve",
     "prebuild": "ts-node git.version.ts",
     "webpack:watch": "webpack --watch",
-    "start:web": "webpack-dev-server --content-base . --port 4200 --inline",
+    "start:web": "webpack-dev-server --content-base . --host 0.0.0.0 --port 4200 --inline",
     "build:electron:main": "npm run prebuild && tsc main.ts --outDir dist && copyfiles package.json dist && cd dist && npm install --prod && cd ..",
     "build": "cross-env NODE_ENV=development webpack --display-error-details && npm run build:electron:main",
     "build:prod": "cross-env NODE_ENV=production npm run build",
