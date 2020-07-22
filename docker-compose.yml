@@ -1,0 +1,21 @@
+version: '2.0'
+
+services:
+  timetracker:
+    container_name: timetracker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    working_dir: /app
+    ports:
+      - 4200:4200
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    tty: true
+    networks:
+      - timetracker
+networks:
+  timetracker: null
